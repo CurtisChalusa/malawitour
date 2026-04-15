@@ -6,9 +6,10 @@
     <title>Malawi Tour | 16-Day Adventure</title>
     <style>
         :root {
-            --primary: #c0392b; /* A warm Malawi red */
+            --primary: #c0392b; 
             --secondary: #2c3e50;
             --light: #f4f4f4;
+            --accent: #27ae60;
         }
 
         body {
@@ -22,279 +23,338 @@
         header {
             background: var(--secondary);
             color: white;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
         }
 
-        /* Map Section */
+        /* Map Section - Fixed for Public Access */
         .map-container {
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            border: 5px solid white;
         }
 
         iframe {
             width: 100%;
-            height: 450px;
+            height: 500px;
             border: none;
         }
 
-        /* Itinerary Section */
+        /* Itinerary Styling */
         h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
+            color: var(--secondary);
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
         }
 
         details {
             background: white;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
+            margin-bottom: 12px;
+            padding: 0;
+            border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         summary {
+            padding: 20px;
             font-weight: bold;
             cursor: pointer;
             list-style: none;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            outline: none;
         }
 
         summary::after {
-            content: '▼';
-            font-size: 0.8rem;
+            content: '+';
+            font-size: 1.5rem;
             color: var(--primary);
         }
 
         details[open] summary::after {
-            content: '▲';
+            content: '−';
+        }
+
+        .day-content {
+            padding: 0 20px 20px 20px;
+            border-top: 1px solid #eee;
         }
 
         ul {
             padding-left: 20px;
+            margin-top: 15px;
         }
 
-        /* Info Boxes */
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Pricing & Details */
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .info-box {
             background: white;
-            padding: 20px;
-            border-top: 4px solid var(--primary);
-            border-radius: 5px;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 5px solid var(--accent);
+        }
+
+        .info-box.exclude {
+            border-top-color: var(--primary);
         }
 
         .note {
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 5px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
             text-align: center;
-            font-weight: bold;
         }
 
         @media (max-width: 600px) {
             .grid { grid-template-columns: 1fr; }
+            iframe { height: 350px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>16-Day Malawi Tour</h1>
-    <p>Explore the Warm Heart of Africa</p>
+    <h1>The Warm Heart of Africa</h1>
+    <p>16-Day Ultimate Malawi Tour Itinerary</p>
 </header>
 
 <div class="container">
     
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/d/edit?mid=1CFy_KWJxl5otk6vRGb7RUgVwaDwoAZo&usp=sharing" title="Malawi Map"></iframe>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873950.4851253442!2d32.65814143494553!3d-13.23075276329712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x191d6438a2e1694f%3A0xc665780a40f81373!2sMalawi!5e0!3m2!1sen!2smw!4v1715000000000!5m2!1sen!2smw" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 
-    <h2>The Itinerary</h2>
+    <h2>Full Itinerary</h2>
 
     <details>
         <summary>Day 1: Arrival</summary>
-        <ul>
-            <li>Meet and greet at the airport</li>
-            <li>Transfer to the Sunbird Capital Hotel (two nights)</li>
-            <li>Relax and rest after flight</li>
-            <li>7:00 PM: Welcome Dinner</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Meet and greet at the airport</li>
+                <li>Transfer to the Sunbird Capital Hotel (two nights)</li>
+                <li>Relax and rest after flight</li>
+                <li>7:00 PM: Welcome Dinner</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 2: Lilongwe City Tour</summary>
-        <ul>
-            <li>Memorial Tower & Kamuzu Mausoleum</li>
-            <li>Parliament Building & Bingu National Stadium</li>
-            <li>Local Craft Market & Densely populated vendor market</li>
-            <li>Bunda Hill visit</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Visit Memorial Tower & Kamuzu Mausoleum</li>
+                <li>Visit Parliament Building & Bingu National Stadium</li>
+                <li>Visit Local Craft Market & Densely populated vendor market</li>
+                <li>Visit Bunda Hill</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 3: Chongoni Rock Art & Gule Wamkulu</summary>
-        <ul>
-            <li>Head to Dedza for Chongoni rock art</li>
-            <li>Visit Chipalukwa village</li>
-            <li>Watch Gule Wamkulu traditional dance</li>
-            <li>Check in at Namalikhate Lodge (Mua Mission)</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Head to Dedza for Chongoni Rock Art</li>
+                <li>Visit Chipalukwa Village</li>
+                <li>Watch Gule Wamkulu traditional dance</li>
+                <li>Transfer to Mua Mission (Namalikhate Lodge)</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 4: Kungoni Cultural Museum & Cape Maclear</summary>
-        <ul>
-            <li>Cultural museum tour & local craft gallery</li>
-            <li>Traditional dance performances</li>
-            <li>11:00 AM: Transfer to Cape Maclear (Gecko Lounge)</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Cultural Museum tour & Craft Gallery</li>
+                <li>Watch traditional cultural dances</li>
+                <li>11:00 AM: Transfer to Cape Maclear (Gecko Lounge)</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 5: Lake Malawi Boat Trip</summary>
-        <ul>
-            <li>Boat trip to Thumbi Island and Otters Point</li>
-            <li>African Fish Eagle watching</li>
-            <li>Feeding cichlids & Snorkeling</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Boat trip to Thumbi Island and Otters Point</li>
+                <li>African Fish Eagle watching</li>
+                <li>Feed the colorful cichlids</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 6: Liwonde National Park</summary>
-        <ul>
-            <li>Transfer to Liwonde (Kutchire Lodge)</li>
-            <li>4:00 PM: Sunset Boat Safari</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Transfer to Liwonde National Park (Kutchire Lodge)</li>
+                <li>4:00 PM: Sunset Boat Safari</li>
+                <li>6:30 PM: Dinner at the lodge</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 7: Game Drive & Malape Pillars</summary>
-        <ul>
-            <li>5:30 AM: Morning Game Drive (Big Five)</li>
-            <li>2:30 PM: Visit Malape Pillars</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>5:30 AM: Morning Big Five Game Drive</li>
+                <li>2:30 PM: Visit Malape Pillars (45 min drive)</li>
+            </ul>
+        </div>
     </details>
 
     <details>
-        <summary>Day 8: Zomba City (The Old Capital)</summary>
-        <ul>
-            <li>Transfer to Zomba</li>
-            <li>Visit Chilema Tree & Colonial buildings</li>
-            <li>Botanical Gardens</li>
-            <li>Check in: Kefi Café Hotel</li>
-        </ul>
+        <summary>Day 8: Zomba City</summary>
+        <div class="day-content">
+            <ul>
+                <li>Transfer to Zomba (Colonial Capital)</li>
+                <li>Visit Chilema Tree & Botanical Gardens</li>
+                <li>Check in at Kefi Café Hotel</li>
+            </ul>
+        </div>
     </details>
 
     <details>
-        <summary>Day 9: Williams Falls & Zomba Plateau</summary>
-        <ul>
-            <li>Visit Williams Falls & Mulunguzi Dam</li>
-            <li>Flora and Fauna exploration</li>
-            <li>11:00 AM: Transfer to Blantyre (Malawi Sun Hotel)</li>
-        </ul>
+        <summary>Day 9: Williams Falls & Blantyre</summary>
+        <div class="day-content">
+            <ul>
+                <li>Visit Williams Falls & Mulunguzi Dam on Zomba Plateau</li>
+                <li>11:00 AM: Transfer to Blantyre</li>
+                <li>Check in at Malawi Sun Hotel</li>
+            </ul>
+        </div>
     </details>
 
     <details>
-        <summary>Day 10: Blantyre City & Satemwa Tea Estate</summary>
-        <ul>
-            <li>St. Michaels of All Angels Church</li>
-            <li>Mandala House (Oldest building in Malawi)</li>
-            <li>Satemwa Tea Estate tour & Factory visit</li>
-        </ul>
+        <summary>Day 10: Blantyre City & Satemwa Tea</summary>
+        <div class="day-content">
+            <ul>
+                <li>St. Michaels of All Angels Church & Mandala House</li>
+                <li>1:30 PM: Satemwa Tea Estate Plantation & Factory tour</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 11: Mulanje Mountain</summary>
-        <ul>
-            <li>Head to Mulanje District</li>
-            <li>Check in: Nalipiri Eco Lodge</li>
-            <li>Township walking tour & tea plantation views</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Head to Mulanje District (Nalipiri Eco Lodge)</li>
+                <li>Relax with tea plantation views</li>
+                <li>Township walking tour</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 12: Dziwe Lankhalamba (Pool of the Elder)</summary>
-        <ul>
-            <li>Visit the natural pool at the foot of Mulanje</li>
-            <li>Swimming & Picnic lunch</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Visit the natural rock pool at the foot of the mountain</li>
+                <li>Swimming, photos, and lunch by the water</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 13: Majete Game Reserve</summary>
-        <ul>
-            <li>9:00 AM: Transfer to Majete</li>
-            <li>Check in: Ng’ona Lodge</li>
-            <li>4:00 PM: Sunset Safari</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>9:00 AM: Transfer to Majete</li>
+                <li>Check in at Ng’ona Lodge</li>
+                <li>4:00 PM: Sunset Safari</li>
+            </ul>
+        </div>
     </details>
 
     <details>
-        <summary>Day 14: Game Drive & Village Walk</summary>
-        <ul>
-            <li>Morning Game Drive</li>
-            <li>2:00 PM: Village walking tour</li>
-        </ul>
+        <summary>Day 14: Game Drive & Village Safari</summary>
+        <div class="day-content">
+            <ul>
+                <li>Early morning game drive</li>
+                <li>2:00 PM: Local village walking tour</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 15: Return to Blantyre</summary>
-        <ul>
-            <li>9:30 AM: Transfer to Blantyre (Malawi Sun Hotel)</li>
-            <li>Afternoon at leisure</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Transfer to Blantyre (Malawi Sun Hotel)</li>
+                <li>Final evening for relaxation and souvenirs</li>
+            </ul>
+        </div>
     </details>
 
     <details>
         <summary>Day 16: Departure</summary>
-        <ul>
-            <li>Transfer to the airport</li>
-            <li>End of service</li>
-        </ul>
+        <div class="day-content">
+            <ul>
+                <li>Breakfast and airport transfer</li>
+                <li>End of Service</li>
+            </ul>
+        </div>
     </details>
 
     <div class="grid">
         <div class="info-box">
-            <h3>Tour Includes</h3>
+            <h3>Tour Inclusive</h3>
             <ul>
-                <li>4* Accommodation</li>
-                <li>Private Transportation</li>
-                <li>Professional Guide & Driver</li>
-                <li>All Park & Museum Fees</li>
-                <li>Safari Activities & Boat Trips</li>
+                <li>4* accommodation</li>
+                <li>Private transportation & Airport transfer</li>
+                <li>Tour guide & Separate driver</li>
+                <li>All Safari, Boat trips & Museum fees</li>
             </ul>
         </div>
-        <div class="info-box">
-            <h3>Tour Excludes</h3>
+        <div class="info-box exclude">
+            <h3>Tour Exclusive</h3>
             <ul>
-                <li>Flights & Visas</li>
                 <li>Daily Meals</li>
-                <li>Gratuities</li>
-                <li>Drinks & Souvenirs</li>
+                <li>International Flights & Visas</li>
+                <li>Gratuities & Souvenirs</li>
+                <li>Drinks & Extra services</li>
             </ul>
         </div>
     </div>
 
     <div class="note">
-        NOTE: The tour package is reserved only when the 10% deposit of the total tour cost is paid.
+        RESERVATION NOTE: A 10% deposit of the total tour cost is required to reserve this package.
     </div>
 
 </div>
